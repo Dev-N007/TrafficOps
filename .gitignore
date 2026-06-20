@@ -1,0 +1,53 @@
+# Python cache & build
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+
+# CatBoost output
+catboost_info/
+
+# Databases & local state
+data/*.db
+data/*.sqlite
+models/*.cbor
+models/location_stats.json
+models/feature_importances.json
+
+# Node & Next.js
+node_modules/
+.next/
+out/
+.env*.local
+next-env.d.ts
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation & scripts excluded from commits
+git_history.md
+presentation_prompt.md
+demo_video_guide.md
+scripts/
+app/database.py.fixed
