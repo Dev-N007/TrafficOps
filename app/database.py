@@ -23,6 +23,7 @@ def create_tables(conn):
         latitude REAL,
         longitude REAL,
         event_cause TEXT,
+        address TEXT,
         requires_road_closure INTEGER,
         start_datetime TEXT,
         end_datetime TEXT,
@@ -133,11 +134,11 @@ def load_historical_data(conn, csv_path):
         
     cursor.executemany("""
     INSERT INTO events (
-        id, event_type, latitude, longitude, event_cause, requires_road_closure,
+        id, event_type, latitude, longitude, event_cause, address, requires_road_closure,
         start_datetime, end_datetime, status, corridor, priority, zone, junction,
         resolution_time_minutes, criticality_score, traffic_impact_score,
         Hour, Day, Month, Weekday, Weekend
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, events_data)
     
     # Insert criticality mapping values
